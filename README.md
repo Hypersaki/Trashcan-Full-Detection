@@ -1,6 +1,6 @@
-# Trashcan Full Detection
+# can Full Detection
 Zhouyu Jiang
-* [Github Page](https://github.com/Hypersaki/Trashcan-Full-Detection)
+* [Github Page](https://github.com/Hypersaki/can-Full-Detection)
 * [Edge Impulse Page](https://studio.edgeimpulse.com/studio/394655)
 
 ## Introduction
@@ -23,13 +23,13 @@ firstly, the taken pictures will be uploaded and labeled, and stored into the da
 Most of the data in the dataset will be used to train the model, while the rest will be used to validate the model. In this process, the training parameters of the model will be constantly adjusted to get the best training results.
 
 ### Deployment & Testing
-The model trained on Edge Impulse will be deployed to the Arduino Nano 33 BLE. This MCU will take a picture with the OV7675 to get the image and classify the image, and will make the LED Strip respond with a red light if it detects Full garbage.
+The model trained on Edge Impulse will be deployed to the Arduino Nano 33 BLE. This MCU will take a picture with the OV7675 to get the image and classify the image, and will make the LED Strip respond with a red light if it detects full trashcan.
 
 ## Data
 In this project, almost all of my pictures were taken by myself using my cell phone, with a few pictures using my roommate's cell phone. Most of the pictures were taken vertically from a higher angle. Initially, I was going to use 3 categories - "full", "half full" and "empty", However, it was finally neutered down to "fullbin" and "emptybin".
 
 ### Application Discussion
-People may selectively delay and not take out the trash when the trash can is almost but not quite full. This does not help to improve the kitchen environmentals.
+People may selectively delay and not take out the  when the  can is almost but not quite full. This does not help to improve the kitchen environmentals.
 ### Technically Discussion
 The OV7675, an embedded edge-application camera, is so limited in its ability to take pictures that it can confuse full and not-full situations. This can exacerbate the psychology of selective procrastination.
 
@@ -44,8 +44,39 @@ The neural network was set up with 20 training cycles, a learning rate of 0.0005
 Since the total sample size is relatively small with only 100 samples for each label, the training cycles of 50-100 will not be set as in other projects with large number of samples with many classifications. in addition, Data augmentation is also enabled to improve the accuracy. Since the dataset is relatively small, the batch size is set to 16 instead of the default 32, and a batch size of 16 even performs better than the model trained with a batch size of 32. The transferred learning dataset has more distinctive features and it makes more sense to use a lower learning rate than the default value of 0.001. A lower learning rate avoids overfitting and enhances generalization.
 
 ## Experiments
+### Model selection
+Before running EON Tuner, I tried to select MobileNetV1 96x96 0.25, MobileNetV1 96x96 0.2, MobileNetV1 96x96 0.1 in turn, while my first attempt to deploy MobileNetV1 96x96 0.25 failed. As this model is using too much RAM. this will totally make it not work. After trying, both MobileNetV1 96x96 0.2 and MobileNetV1 96x96 0.1 can be deployed on Arduino Nano 33 BLE. The Unoptimized (float 32) version of the MobileNetV1 96x96 0.2 model also could not be successfully deployed on the Arduino Nano 33 BLE due to the peak RAM - 276.9KB being higher than 256KB. After running EON Tuner, I chose the recommended MobileNetV1 96x96 0.1 because the number of classifications for this project is only 2. This means that the detection is not too difficult. Besides, all these models actually have good performance, and choosing the one with less memory requirement can make the device work less stressful.
+### Training Settings
+After getting the EON Tuner recommended model, I performed many training tests. This included adjusting the training cycles, batch size, and learning rate.
+#### Traning Cycles Adjustment
+Since I wasn't sure if I wanted to use the usual 50-100 training cycles, I tried to start with 60, and tested 40 and 20, each time getting more reasonable results. Because each time there was a decrease in ACCURACY or an increase in LOSS. However, I still chose 20 cycles as the final number of training cycles to use, because the high accuracy and low loss from too many cycles may lead to overfitting, which will reduce the generalizability of the model. Moreover, the result of 20 cycles is still decent with a high accuracy of 93.9% and a loss of 0.11.
+|Training Cycles|Accuracy|Loss|
+|:-:|:-:|:-:|
+| 20| 93.9%|0.11|
+| 40|93.9%|0.8|
+| 60|97.0%|0.7|
+----
+#### Learning Rate Adjustment
+Although previously mentioned use of lower learning rates in transfer learning, I still tested learning rates in 0.001, 0.0005, and 0.0001. You can see that when the learning rate is 0.0001 makes the accuracy higher, but its Loss is much higher than when the learning rate is 0.0005 and 0.0001. This could lead to poor accuracy or generalizability when applied to new data. In the case of 0.0005 and 0.001 it was finally decided to use a learning rate of 0.0005 due to the factors mentioned earlier.
+|Learning Rate|Accuracy|Loss|
+|:-:|:-:|:-:|
+|0.0001| 97%|0.29|
+|0.0005|93.9%|0.11|
+|0.001|93.9|0.11|
+----
+#### Batch Size Adjustment
+Smaller datasets are better suited with a small batch size, I tested both 16 and 32. And with batch size of 16, the model performs better in Loss.
+|Learning Rate|Accuracy|Loss|
+|:-:|:-:|:-:|
+|16|93.9%|0.11|
+|32|93.9%|0.17|
+----
+### Deployment Selection
+I tried to deploy the TL model to the Nano 33 MCU via two methods. The first method is to deploy it via Edge Impulse Binary and this was successful. The second method is to build an Arduino Library and then add the zip package to the library via the Arduino IDE. Personally, I preferred the second method, but ultimately failed because I got stuck at the complie stage every time. I needed to edit the code to enable the addition of the LED Strip, which ultimately didn't work. In the end my choice was still to deploy the model to the Nano 33 MCU via the Edge Impluse Binary and get the camera via the serial port to view it on the debug interface, although it didn't make sense for its application.
 
 ## Result and Observation
+
+
 
 ## Bibliography
 
