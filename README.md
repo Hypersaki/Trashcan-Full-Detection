@@ -138,8 +138,10 @@ Overall, this project didn't quite accomplish my goals. Due to the inability to 
 4. Nano 33 ble (no date) docs.arduino.cc. Available at: https://docs.arduino.cc/hardware/nano-33-ble/ (Accessed: 09 May 2024). 
 
 ## Declaration of Authorship
-I, Zhouyu Jiang, confirm that the work presented in this assessment is my own. Where information has been derived from other sources, I confirm that this has been indicated in the work.
+I, ZHOUYU JIANG, confirm that the work presented in this assessment is my own. Where information has been derived from other sources, I confirm that this has been indicated in the work.
 
 May 09, 2024
+
+Zhouyu Jiang
 
 Word count: 1534 (main text)
