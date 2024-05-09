@@ -1,6 +1,6 @@
 # Trashcan Full Detection
 Zhouyu Jiang
-* [Github Page](https://github.com/Hypersaki/can-Full-Detection)
+* [Github Page](https://github.com/Hypersaki/trashcan-Full-Detection)
 * [Edge Impulse Page](https://studio.edgeimpulse.com/studio/394655)
 
 ## Introduction
