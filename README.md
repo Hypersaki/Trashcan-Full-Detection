@@ -66,7 +66,7 @@ Although previously mentioned use of lower learning rates in transfer learning, 
 ----
 #### Batch Size Adjustment
 Smaller datasets are better suited with a small batch size, I tested both 16 and 32. And with batch size of 16, the model performs better in Loss.
-|Learning Rate|Accuracy|Loss|
+|Batch Size|Accuracy|Loss|
 |:-:|:-:|:-:|
 |16|93.9%|0.11|
 |32|93.9%|0.17|
