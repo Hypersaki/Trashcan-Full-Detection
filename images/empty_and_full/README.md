@@ -1,1 +1,0 @@
-Since the raw images are too big, thre are only screenshots of the files and the folder.
