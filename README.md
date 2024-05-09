@@ -132,10 +132,10 @@ Overall, this project didn't quite accomplish my goals. Due to the inability to 
 
 
 ## Bibliography
-Arduino Library (no date) Edge Impulse Documentation. Available at: https://edge-impulse.gitbook.io/docs/run-inference/arduino-library (Accessed: 09 May 2024). 
-Arduino nano 33 ble sense (no date) Edge Impulse Documentation. Available at: https://edge-impulse.gitbook.io/docs/edge-ai-hardware/mcu/arduino-nano-33-ble-sense (Accessed: 09 May 2024). 
-Hayajneh, A.M. et al. (2024) ‘TinyML empowered transfer learning on the edge’, IEEE Open Journal of the Communications Society, 5, pp. 1656–1672. doi:10.1109/ojcoms.2024.3373177. 
-Nano 33 ble (no date) docs.arduino.cc. Available at: https://docs.arduino.cc/hardware/nano-33-ble/ (Accessed: 09 May 2024). 
+1. Arduino Library (no date) Edge Impulse Documentation. Available at: https://edge-impulse.gitbook.io/docs/run-inference/arduino-library (Accessed: 09 May 2024). 
+2. Arduino nano 33 ble sense (no date) Edge Impulse Documentation. Available at: https://edge-impulse.gitbook.io/docs/edge-ai-hardware/mcu/arduino-nano-33-ble-sense (Accessed: 09 May 2024). 
+3. Hayajneh, A.M. et al. (2024) ‘TinyML empowered transfer learning on the edge’, IEEE Open Journal of the Communications Society, 5, pp. 1656–1672. doi:10.1109/ojcoms.2024.3373177. 
+4. Nano 33 ble (no date) docs.arduino.cc. Available at: https://docs.arduino.cc/hardware/nano-33-ble/ (Accessed: 09 May 2024). 
 
 ## Declaration of Authorship
 I, Zhouyu Jiang, confirm that the work presented in this assessment is my own. Where information has been derived from other sources, I confirm that this has been indicated in the work.
