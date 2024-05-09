@@ -128,7 +128,7 @@ Overall, this project didn't quite accomplish my goals. Due to the inability to 
 <img src="https://github.com/Hypersaki/Trashcan-Full-Detection/raw/main/images/emptybinexample/Snipaste_2024-05-09_09-23-08.jpg" width=45%" alt="emptybinexample.jpg">
 <img src="https://github.com/Hypersaki/Trashcan-Full-Detection/raw/main/images/fullbinexample/example.jpg" width=45%" alt="fullbinexample.jpg">
 </p>
-<p align="Check if a full trash can is detected locally</p>
+<p align="center">"Check if a full trash can is detected locally</p>
 
 
 ## Bibliography
