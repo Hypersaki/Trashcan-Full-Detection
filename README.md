@@ -4,7 +4,7 @@ Zhouyu Jiang
 * [Edge Impulse Page](https://studio.edgeimpulse.com/studio/394655)
 
 ## Introduction
-In this project, a Transfer Learning(TL) model is deployed on the device used to whether if the trash can in the kitchen is full or not. A camera installed on the device continuously takes pictures of the inside of the trash can and provides data visualization via an LED Strip. The overall appearance of the project is shown below：
+In this project, a Transfer Learning(TL) model is deployed on the device used to detect whether if the trash can in the kitchen is full or not. A camera installed on the device continuously takes pictures of the inside of the trash can and provides data visualization via an LED Strip. The overall appearance of the project is shown below：
 
 <p align="center">
 <img src="https://github.com/Hypersaki/Trashcan-Full-Detection/raw/main/images/overview/overviewin.jpg" width=45%" alt="overviewin.jpg">
@@ -144,4 +144,4 @@ May 09, 2024
 
 Zhouyu Jiang
 
-Word count: 1534 (main text)
+Word count: 1535 (main text)
